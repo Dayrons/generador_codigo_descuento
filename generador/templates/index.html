@@ -1,12 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generador de cupones</title>
-</head>
-<body>
-    <h1>Hola mundo</h1>
-</body>
-</html>
+{% extends 'layouts/layout.html' %}
+
+{% block titulo %}Generador de cupones{%endblock%}
+
+{%block contenido %}
+
+ 
+   <div class="container mt-5">
+    <form action="" class="mx-auto w-50 card p-5" >
+
+        <select class="form-select mb-4" name="" id="" >
+            <option value="empresa1">Empresa1</option>
+            <option value="empresa2">Empres2</option>
+            <option value="empresa3">Empresa3</option>
+            <option value="empresa4">Empresa4</option>
+            <option value="empresa5">Empresa5</option>
+        </select>
+        <input class="form-control   mb-4 " type="text" placeholder="valor">
+        <button type="button" class="btn btn-dark">Generar codigo</button>
+        
+        
+     </form>
+
+   </div>
+
+{%endblock%}

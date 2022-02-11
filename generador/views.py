@@ -6,7 +6,7 @@ from generador.models import Cupon
 
 def index(request):
     """ cupon = Cupon(empresa='empresa1', codigo='123*+-', valor=10, usado=False)
-    cupon.save() """
+    cupon.save()"""
 
     cupones = Cupon.objects.all()
 

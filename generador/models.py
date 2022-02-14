@@ -8,3 +8,9 @@ class Cupon(models.Model):
     codigo = CharField(max_length=100)
     valor = IntegerField()
     usado = BooleanField()
+
+
+class Empresa(models.Model):
+    nombre = CharField(max_length=100)
+    pais = CharField(max_length=100)
+    activida = CharField(max_length=100)

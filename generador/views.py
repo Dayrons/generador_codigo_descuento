@@ -13,3 +13,8 @@ def index(request):
     print(cupones)
     
     return render(request,'index.html')
+
+
+def empresa(request):
+
+      return render(request,'empresa.html')

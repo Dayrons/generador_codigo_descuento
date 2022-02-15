@@ -14,7 +14,7 @@ def get(request):
     cuponesToken = []
     for  cupon in cupones:
         token = jwt.encode({"id": cupon.id }, cupon.codigo, algorithm="HS256")
-        cuponesToken.append({'codigo': cupon.codigo , 'token': token})
+        cuponesToken.append({'codigo': cupon.codigo , 'usado': cupon.usado ,'token': token})
 
     return Response(cuponesToken)
 

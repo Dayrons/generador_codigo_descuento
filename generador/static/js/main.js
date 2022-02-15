@@ -1,5 +1,6 @@
 const valor = document.querySelector('#valor');
 const empresa = document.querySelector('#empresa');
+const formulario = document.querySelector('#formulario');
 
 formulario.addEventListener('submit',async (e)=>{
     e.preventDefault()

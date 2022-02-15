@@ -13,9 +13,16 @@
  
    <div class="container mt-5">
     <form action="" class="mx-auto w-50 card p-5"  id="formulario" >
-        <input class="form-control   mb-4 " type="text" placeholder="Nombre" >
+        <input class="form-control   mb-4 " type="text" placeholder="Nombre de la empresa" id="empresa">
 
-        <select class="form-select mb-4">
+        <select class="form-select mb-4" id="capital">
+            <option value="publica">Publica</option>
+            <option value="privada">Privada</option>
+            <option value="semiprivada">Semiprivada</option>
+          
+           
+        </select>
+        <select class="form-select mb-4" id="pais">
             <option value="venezuela">Venezuela</option>
             <option value="colombia">Colombia</option>
             <option value="chile">Chile</option>
@@ -33,5 +40,5 @@
 
 {%block scripts %}
 {% load static %}
-   <script src="{% static 'js/main.js' %}"></script>
+   <script src="{% static 'js/empresas.js' %}"></script>
 {%endblock%}

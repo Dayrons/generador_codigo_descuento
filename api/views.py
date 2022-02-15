@@ -18,8 +18,6 @@ def get(request):
 
     return Response(cuponesToken)
 
-
-
 @api_view(['POST'])
 def create(request):
     datos = request.data
@@ -67,8 +65,20 @@ def empresa(request):
 
     if request.method == 'GET':
         print(Empresa.objects.all())
+        
         serializer = EmpresaSerializer(Empresa.objects.all(), many=True)
         return Response(serializer.data)
 
     elif request.method == 'POST':
-        return Response({'hola': 'mundo'})
+        datos = request.data
+
+     
+
+        serializer = EmpresaSerializer(data=datos)
+
+        if serializer.is_valid():
+            serializer.save()
+            print(serializer.data)
+            return Response({'error': False, 'mensaje': 'Empresa registrada satifactoriamente'})
+        else:
+            return Response({'error': True, 'mensaje': 'no se cumplem los parametros para registrar una empresa'})

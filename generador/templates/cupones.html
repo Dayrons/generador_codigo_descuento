@@ -1,0 +1,20 @@
+{% extends 'layouts/layout.html' %}
+
+{% block titulo %}Cupones{%endblock%}
+
+{%block contenido %}
+
+   <div class="container mt-5">
+    <form action="" class="mx-auto w-50 card p-5"  id="formulario" >
+        <input class="form-control   mb-4 " type="text" placeholder="Codigo del cupon" id="codigo">
+        <button type="submit" class="btn btn-dark">Canjear cupon</button>
+        
+     </form>
+   </div>
+
+{%endblock%}
+
+{%block scripts %}
+   {% load static %} 
+   <script src="{% static 'js/cupones.js' %}"></script>
+{%endblock%}

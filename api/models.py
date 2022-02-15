@@ -4,7 +4,7 @@ from django.db.models.fields import CharField, BooleanField, IntegerField
 
 
 class Cupon(models.Model):
-    empresa = CharField(max_length=100)
+    empresa = IntegerField()
     codigo = CharField(max_length=100)
     valor = IntegerField()
     usado = BooleanField(default=False)

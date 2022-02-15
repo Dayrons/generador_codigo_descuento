@@ -8,5 +8,9 @@ def index(request):
     return render(request,'index.html', {'empresas':empresas })
 
 
-def empresa(request):
-      return render(request,'empresa.html')
+def empresas(request):
+      return render(request,'empresas.html')
+
+
+def cupones(request):
+      return render(request,'cupones.html')

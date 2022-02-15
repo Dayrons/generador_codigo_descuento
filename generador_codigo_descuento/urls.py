@@ -18,17 +18,19 @@ from django.urls import include, path
 from generador import  views
 # from rest_framework import routers
 
-from api import views as test
+from api import views as api
 
 """ router = routers.DefaultRouter()
 
-router.register(r'cupones', test.getData,  basename='api') """
+router.register(r'cupones', api.getData,  basename='api') """
 
 urlpatterns = [
     path('', views.index),
-    path('empresa', views.empresa),
-    path('api/v1/cupones', test.get),
-    path('api/v1/cupones/create', test.create),
-    path('api/v1/empresa', test.empresa),
+    path('empresas', views.empresas),
+    path('cupones', views.cupones),
+    path('api/v1/cupones', api.get),
+    path('api/v1/cupones/create', api.create),
+    path('api/v1/cupones/canjear', api.cajear),
+    path('api/v1/empresa', api.empresa),
     # path('admin/', admin.site.urls),
 ]

@@ -3,7 +3,6 @@ const empresa = document.querySelector('#empresa');
 
 formulario.addEventListener('submit',async (e)=>{
     e.preventDefault()
-
     if(Number(valor.value) > 0 && empresa.value != ''){
 
         console.log(valor,empresa)
@@ -21,14 +20,5 @@ formulario.addEventListener('submit',async (e)=>{
             showConfirmButton: false,
             timer: 1500
           })
-
-
-
-    }
-
-    
-    
-    
-   
-    
+    }   
 })

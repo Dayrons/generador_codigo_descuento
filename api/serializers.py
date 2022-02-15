@@ -1,9 +1,13 @@
- 
 from rest_framework import serializers
-from generador.models import  Cupon
+from .models import  Cupon, Empresa
  
 class CuponSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cupon
-        fields = ['id', 'empresa', 'codigo', 'valor', 'usado', ]
-        extra_kwargs = {'id': {'required': False}}
+        fields = '__all__'
+
+
+class EmpresaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Empresa
+        fields = '__all__'

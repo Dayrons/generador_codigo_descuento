@@ -5,6 +5,7 @@
 {%block style %}
 {% load static %}
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
+   
 {%endblock%}
 
 
@@ -13,25 +14,26 @@
  
    <div class="container mt-5">
     <form action="" class="mx-auto w-50 card p-5"  id="formulario" >
+        
+        <select class="form-select mb-4"  id="empresa" >
+            {% for empresa in empresas %}
+               <option value="{{empresa.id}}">{{empresa.nombre}}</option>
+            {% endfor %}
 
-        <select class="form-select mb-4" aria-label="Disabled select example" disabled >
-            <option value="empresa1">Empresa1</option>
-            <option value="empresa2">Empres2</option>
-            <option value="empresa3">Empresa3</option>
-            <option value="empresa4">Empresa4</option>
-            <option value="empresa5">Empresa5</option>
         </select>
-        <input class="form-control   mb-4 " type="text" placeholder="valor" >
+
+
+        
+        <input type="number" class="form-control mb-4" id="valor">
+
         <button type="submit" class="btn btn-dark">Generar codigo</button>
         
      </form>
    </div>
 
-
-
 {%endblock%}
 
 {%block scripts %}
-{% load static %}
+   {% load static %} 
    <script src="{% static 'js/main.js' %}"></script>
 {%endblock%}

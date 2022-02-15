@@ -16,18 +16,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from generador import  views
-from rest_framework import routers
+# from rest_framework import routers
 
 from api import views as test
 
-router = routers.DefaultRouter()
+""" router = routers.DefaultRouter()
 
-router.register(r'api', test.CuponViewSet, basename='api')
+router.register(r'cupones', test.getData,  basename='api') """
 
 urlpatterns = [
     path('', views.index),
     path('empresa', views.empresa),
-    path('', include(router.urls)),
-    
+    path('api/v1/cupones', test.get),
+    path('api/v1/cupones/create', test.create),
+    path('api/v1/empresa', test.empresa),
     # path('admin/', admin.site.urls),
 ]

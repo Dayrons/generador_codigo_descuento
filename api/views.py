@@ -45,19 +45,17 @@ def cajear(request):
 
     codigo = request.data['codigo']
     
-
     try:
         cupon = Cupon.objects.get(codigo=codigo)
 
-        if cupon.usado:
-            serializer = CuponSerializer(cupon, many=False)
-            datos = request.data
-            token = jwt.decode(datos['token'], datos['codigo'], algorithms=["HS256"])
-            return Response(serializer.data)
-        else:
+        if cupon.usado :
             return Response({'error': True, 'mensaje': 'el cupon de de descuento ya fue canjeado'}, status=status.HTTP_404_NOT_FOUND)
+        else:
+            cupon.usado = True
+            cupon.save()
+            cupon = {'valor': cupon.valor, 'mensaje': 'cupon canjeado'}
+            return Response(cupon)
 
-        
     except Cupon.DoesNotExist:
         return Response({'error': True, 'mensaje': 'no existe un cupon con el codigo selecionado'}, status=status.HTTP_404_NOT_FOUND)
         

@@ -46,14 +46,7 @@ formulario.addEventListener('submit', async (e) => {
             showConfirmButton: false,
             timer: 1500
           })
-      })
-
-      Swal.fire({
-        icon: 'error',
-        title: 'Error al canjear el cupon',
-        showConfirmButton: false,
-        timer: 1500
-      })
+        })
 
     return null
   }

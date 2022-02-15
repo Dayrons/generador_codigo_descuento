@@ -58,8 +58,6 @@ def cajear(request):
         return Response({'error': True, 'mensaje': 'no existe un cupon con el codigo selecionado'}, status=status.HTTP_404_NOT_FOUND)
         
 
-        
-
 @api_view(['GET', 'POST'])
 def empresa(request):
 
